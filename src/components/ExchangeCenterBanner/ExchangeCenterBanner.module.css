@@ -1,0 +1,345 @@
+.banner {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  min-height: 430px;
+  padding: 38px 42px;
+  overflow: hidden;
+  isolation: isolate;
+  border: 1px solid rgba(182, 126, 255, 0.34);
+  border-radius: 24px;
+  background:
+    radial-gradient(
+      ellipse at 80% 42%,
+      rgba(125, 73, 194, 0.23),
+      transparent 45%
+    ),
+    linear-gradient(120deg, #111426, #201a39 60%, #111a2b);
+  transition: border-color 0.3s;
+}
+.banner:hover {
+  border-color: rgba(196, 164, 255, 0.7);
+}
+.content {
+  position: relative;
+  z-index: 2;
+}
+.eyebrow {
+  color: #c5a5ff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.7px;
+}
+.content h2 {
+  margin: 20px 0 14px;
+  color: #f9f7ff;
+  font-size: clamp(32px, 3.4vw, 45px);
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  line-height: 1.12;
+}
+.content h2 span {
+  color: var(--gold);
+}
+.description {
+  max-width: 390px;
+  color: #b8bbd0;
+  font-size: 14px;
+  line-height: 1.8;
+}
+.steps {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 22px 0;
+  color: #d8cafa;
+  font-size: 11px;
+}
+.steps span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.steps > svg {
+  color: #a38ce0;
+}
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 47px;
+  padding: 0 20px;
+  border-radius: 11px;
+  color: #211b17;
+  background: linear-gradient(110deg, #f5dca5, #d4a85a);
+  font-size: 13px;
+  font-weight: 800;
+  transition:
+    transform 0.2s,
+    filter 0.2s;
+}
+.cta:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+  color: #211b17;
+}
+.cta:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+.visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-height: 300px;
+}
+.rewardCard {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  width: 38%;
+  min-height: 190px;
+  padding: 13px 8px;
+  border: 1px solid rgba(200, 174, 255, 0.35);
+  border-radius: 17px;
+  background: linear-gradient(145deg, #2b2547, #181a31);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.28);
+}
+.rewardCard > span {
+  color: #b5a9d4;
+  font-size: 7px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+.rewardCard strong {
+  color: #f3e7c8;
+  font-size: 22px;
+}
+.rewardCard small {
+  color: #b9b7cd;
+  font-size: 9px;
+  text-align: center;
+}
+.gem,
+.veCoin {
+  display: grid;
+  place-items: center;
+  width: 75px;
+  height: 75px;
+  border-radius: 22px;
+}
+.gem {
+  color: #c4a1ff;
+  background: linear-gradient(145deg, #44316c, #241b42);
+  box-shadow: 0 0 25px rgba(169, 115, 255, 0.15);
+}
+.veCoin {
+  color: #f3d18b;
+  background: linear-gradient(145deg, #66512e, #30243a);
+  box-shadow: 0 0 25px rgba(231, 193, 123, 0.12);
+}
+.conversion {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 70px;
+  height: 70px;
+  border: 1px solid rgba(227, 192, 123, 0.6);
+  border-radius: 50%;
+  color: #f2d9a0;
+  background: #211f39;
+  box-shadow: 0 0 27px rgba(189, 135, 63, 0.16);
+  animation: exchangePulse 4s ease-in-out infinite;
+}
+.conversion span {
+  font-size: 6px;
+  letter-spacing: 1px;
+}
+.rewardBadge {
+  position: absolute;
+  right: 0;
+  bottom: 3%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 13px;
+  border: 1px solid rgba(231, 193, 123, 0.28);
+  border-radius: 12px;
+  color: #f3d9a1;
+  background: #27223b;
+}
+.rewardBadge span {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.rewardBadge strong {
+  font-size: 10px;
+}
+.rewardBadge small {
+  color: #bdb6d0;
+  font-size: 9px;
+}
+.giftBadge {
+  position: absolute;
+  top: 5%;
+  right: 8%;
+  display: grid;
+  place-items: center;
+  width: 45px;
+  height: 45px;
+  border: 1px solid rgba(196, 164, 255, 0.3);
+  border-radius: 13px;
+  color: #c5a5ff;
+  background: #292342;
+}
+@keyframes exchangePulse {
+  50% {
+    transform: rotate(180deg);
+  }
+}
+@media (max-width: 760px) {
+  .banner {
+    grid-template-columns: 1fr;
+    padding: 30px 23px;
+  }
+  .content h2 {
+    font-size: 36px;
+  }
+  .visual {
+    min-height: 290px;
+  }
+}
+@media (max-width: 420px) {
+  .banner {
+    padding: 26px 17px;
+  }
+  .visual {
+    gap: 8px;
+    min-height: 260px;
+  }
+  .rewardCard {
+    min-height: 165px;
+    padding: 10px 5px;
+  }
+  .gem,
+  .veCoin {
+    width: 58px;
+    height: 58px;
+  }
+  .conversion {
+    width: 55px;
+    height: 55px;
+  }
+  .rewardBadge {
+    bottom: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .conversion {
+    animation: none;
+  }
+}
+
+
+/* Responsive dimensions required by the VELOOP assignment */
+.banner {
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 410px;
+}
+
+@media (min-width: 1025px) {
+  .banner {
+    height: clamp(410px, 30vw, 450px);
+  }
+}
+
+@media (min-width: 761px) and (max-width: 1024px) {
+  .banner {
+    height: auto;
+    min-height: 380px;
+    max-height: 540px;
+  }
+}
+
+@media (max-width: 760px) {
+  .banner {
+    height: auto;
+    min-height: 330px;
+    max-height: none;
+  }
+}
+
+/* Consistent, accessible button interactions */
+.cta,
+.primary,
+.secondary {
+  position: relative;
+  min-height: 44px;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    filter 180ms ease,
+    border-color 180ms ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Pointer hover */
+@media (hover: hover) {
+  .cta:hover,
+  .primary:hover,
+  .secondary:hover {
+    filter: brightness(1.08);
+    transform: translateY(-2px);
+  }
+}
+
+/* Pressed state */
+.cta:active,
+.primary:active,
+.secondary:active {
+  transform: scale(0.98);
+}
+
+/* Keyboard accessibility */
+.cta:focus-visible,
+.primary:focus-visible,
+.secondary:focus-visible {
+  outline: 3px solid #f5dca5;
+  outline-offset: 4px;
+}
+
+/* Keep interactions subtle for reduced-motion users */
+@media (prefers-reduced-motion: reduce) {
+  .cta,
+  .primary,
+  .secondary {
+    transition: none;
+  }
+
+  .cta:hover,
+  .primary:hover,
+  .secondary:hover,
+  .cta:active,
+  .primary:active,
+  .secondary:active {
+    transform: none;
+  }
+}
