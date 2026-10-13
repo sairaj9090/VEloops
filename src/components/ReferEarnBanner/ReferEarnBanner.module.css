@@ -362,3 +362,44 @@
   .benefits strong { font-size: 8px; }
   .benefits small { font-size: 7px; }
 }
+
+
+/* Custom referral artwork */
+.visual {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.referralIllustration {
+  display: block;
+  width: 100%;
+  max-width: 560px;
+  max-height: 350px;
+  height: auto;
+  object-fit: contain;
+  margin-inline: auto;
+  filter: drop-shadow(0 16px 26px rgba(0, 0, 0, 0.22));
+  animation: referralFloat 5s ease-in-out infinite;
+}
+
+@keyframes referralFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@media (max-width: 768px) {
+  .referralIllustration {
+    max-height: 230px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .referralIllustration {
+    animation: none;
+  }
+}
