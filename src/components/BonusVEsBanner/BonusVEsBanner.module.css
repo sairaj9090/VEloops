@@ -1,0 +1,620 @@
+
+.banner {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  align-items: center;
+  gap: 28px;
+  width: 100%;
+  min-width: 0;
+  min-height: 410px;
+  height: auto;
+  box-sizing: border-box;
+  padding: 30px 36px;
+  isolation: isolate;
+
+  border: 1px solid rgba(224, 177, 103, 0.32);
+  border-radius: 20px;
+  background:
+    radial-gradient(ellipse at 78% 48%, rgba(174, 111, 47, 0.2), transparent 43%),
+    linear-gradient(120deg, #15172a, #222035 60%, #171a2b);
+  transition: border-color 0.25s ease;
+}
+
+.banner:hover {
+  border-color: rgba(231, 193, 123, 0.65);
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #e9c78c;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  line-height: 1.5;
+}
+
+.content h2 {
+  margin: 15px 0 11px;
+  color: #faf8f3;
+  font-size: clamp(30px, 3.2vw, 42px);
+  font-weight: 800;
+  letter-spacing: -1.2px;
+  line-height: 1.12;
+}
+
+.content h2 span {
+  color: var(--gold, #e7c17b);
+}
+
+.description {
+  max-width: 385px;
+  margin: 0 0 12px;
+  color: #c1bdc9;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.tasks {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 7px;
+  width: 100%;
+  max-width: 360px;
+  margin: 7px 0 15px;
+}
+
+.tasks > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  padding: 8px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.045);
+  color: #e8e3ef;
+  font-size: 12px;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.tasks > div > svg {
+  flex: 0 0 auto;
+  width: 19px;
+  height: 19px;
+  color: #e7c17b;
+}
+
+.tasks span {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.tasks small {
+  color: #aaa7bb;
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 44px;
+  max-width: 100%;
+  padding: 11px 18px;
+  border: 1px solid rgba(255, 231, 180, 0.55);
+  border-radius: 10px;
+  color: #211b17;
+  background: linear-gradient(110deg, #f5dca5, #d4a85a);
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.4;
+  text-align: center;
+  white-space: normal;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.cta svg {
+  flex: 0 0 auto;
+}
+
+.cta:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 4px;
+}
+
+.visual {
+  position: relative;
+  display: grid;
+  place-items: center;
+  align-self: stretch;
+  min-width: 0;
+  min-height: 300px;
+  isolation: isolate;
+}
+
+.ring {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(70%, 300px);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(231, 193, 123, 0.24);
+  border-radius: 50%;
+  box-shadow:
+    0 0 55px rgba(191, 137, 59, 0.08),
+    inset 0 0 40px rgba(191, 137, 59, 0.07);
+  pointer-events: none;
+}
+
+.vault {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  width: 160px;
+  height: 150px;
+  border: 1px solid rgba(240, 203, 134, 0.55);
+  border-radius: 23px;
+  color: #f5dca5;
+  background: linear-gradient(145deg, #51402a, #252034);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3);
+  transform: rotate(-4deg);
+  animation: vaultFloat 5s ease-in-out infinite;
+}
+
+.vault svg {
+  width: 62px;
+  height: 62px;
+  flex: 0 0 auto;
+}
+
+.vault span {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+}
+
+.bonusCoin {
+  position: absolute;
+  z-index: 3;
+  top: 8%;
+  right: 6%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  width: 72px;
+  height: 72px;
+  border: 1px solid #f2d69a;
+  border-radius: 50%;
+  color: #382b1d;
+  background: linear-gradient(145deg, #ffebaf, #b7863c);
+  box-shadow: 0 0 30px rgba(231, 193, 123, 0.2);
+  animation: coinFloat 4s ease-in-out infinite;
+}
+
+.bonusCoin svg {
+  width: 31px;
+  height: 31px;
+}
+
+.bonusCoin strong {
+  font-size: 11px;
+  line-height: 1;
+}
+
+.floatingCoin {
+  position: absolute;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(231, 193, 123, 0.4);
+  border-radius: 50%;
+  color: #e8c783;
+  background: #31263a;
+  animation: coinFloat 4.5s ease-in-out infinite;
+}
+
+.floatingCoin svg {
+  width: 23px;
+  height: 23px;
+}
+
+.coinA {
+  bottom: 12%;
+  left: 8%;
+}
+
+.coinB {
+  top: 15%;
+  left: 8%;
+  color: #c4a6ff;
+  animation-delay: -2s;
+}
+
+.multiplier {
+  position: absolute;
+  z-index: 3;
+  right: 0;
+  bottom: 10%;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  max-width: 190px;
+  padding: 10px 12px;
+  border: 1px solid rgba(231, 193, 123, 0.25);
+  border-radius: 10px;
+  color: #f2dcae;
+  background: #252238;
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+.multiplier svg {
+  flex: 0 0 auto;
+  width: 16px;
+  height: 16px;
+}
+
+@keyframes vaultFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(-4deg);
+  }
+  50% {
+    transform: translateY(-6px) rotate(-2deg);
+  }
+}
+
+@keyframes coinFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+@media (hover: hover) {
+  .tasks > div:hover {
+    border-color: rgba(231, 193, 123, 0.25);
+    background: rgba(231, 193, 123, 0.07);
+  }
+
+  .cta:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.06);
+  }
+}
+
+.cta:active {
+  transform: scale(0.98);
+}
+
+@media (min-width: 1025px) {
+  .banner {
+    height: 430px;
+    min-height: 410px;
+    padding: 30px 36px;
+  }
+
+  .visual {
+    min-height: 300px;
+  }
+}
+
+@media (min-width: 761px) and (max-width: 1024px) {
+  .banner {
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    gap: 16px;
+    height: auto;
+    min-height: 410px;
+    max-height: none;
+    padding: 28px;
+  }
+
+  .content h2 {
+    font-size: clamp(29px, 3.4vw, 36px);
+  }
+
+  .description {
+    font-size: 12px;
+  }
+
+  .tasks {
+    margin: 9px 0 13px;
+  }
+
+  .visual {
+    min-height: 270px;
+  }
+
+  .vault {
+    width: 135px;
+    height: 130px;
+  }
+
+  .bonusCoin {
+    width: 62px;
+    height: 62px;
+  }
+
+  .multiplier {
+    max-width: 160px;
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 760px) {
+  .banner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+    height: auto;
+    min-height: 330px;
+    max-height: none;
+    padding: 25px 22px;
+  }
+
+  .content {
+    width: 100%;
+  }
+
+  .content h2 {
+    font-size: clamp(29px, 7.5vw, 36px);
+    letter-spacing: -1px;
+  }
+
+  .description {
+    max-width: 100%;
+  }
+
+  .tasks {
+    max-width: none;
+  }
+
+  .visual {
+    min-height: 220px;
+  }
+
+  .ring {
+    width: min(62%, 220px);
+  }
+
+  .vault {
+    width: 135px;
+    height: 125px;
+  }
+
+  .vault svg {
+    width: 54px;
+    height: 54px;
+  }
+
+  .bonusCoin {
+    top: 4%;
+    right: 8%;
+    width: 60px;
+    height: 60px;
+  }
+
+  .bonusCoin svg {
+    width: 27px;
+    height: 27px;
+  }
+
+  .coinA {
+    bottom: 5%;
+    left: 7%;
+  }
+
+  .coinB {
+    top: 5%;
+    left: 7%;
+  }
+
+  .multiplier {
+    right: 0;
+    bottom: 2%;
+    max-width: 165px;
+    padding: 8px 10px;
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 420px) {
+  .banner {
+    padding: 23px 17px;
+  }
+
+  .content h2 {
+    font-size: 29px;
+  }
+
+  .visual {
+    min-height: 190px;
+  }
+
+  .ring {
+    width: 165px;
+  }
+
+  .vault {
+    width: 112px;
+    height: 108px;
+    gap: 6px;
+  }
+
+  .vault svg {
+    width: 43px;
+    height: 43px;
+  }
+
+  .vault span {
+    font-size: 8px;
+    letter-spacing: 1.2px;
+  }
+
+  .bonusCoin {
+    width: 53px;
+    height: 53px;
+  }
+
+  .bonusCoin svg {
+    width: 23px;
+    height: 23px;
+  }
+
+  .floatingCoin {
+    width: 36px;
+    height: 36px;
+  }
+
+  .floatingCoin svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .multiplier {
+    right: -3px;
+    max-width: 145px;
+    font-size: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vault,
+  .bonusCoin,
+  .floatingCoin {
+    animation: none;
+  }
+
+  .banner,
+  .tasks > div,
+  .cta {
+    transition: none;
+  }
+
+  .cta:hover,
+  .cta:active {
+    transform: none;
+  }
+}
+
+
+.banner {
+  height: auto;
+  min-height: 430px;
+  max-height: none;
+  padding-bottom: 32px;
+  overflow: visible;
+}
+
+.content {
+  align-self: center;
+  padding-bottom: 4px;
+}
+
+.cta {
+  position: relative;
+  z-index: 5;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+@media (min-width: 1025px) {
+  .banner {
+    height: 430px;
+    min-height: 430px;
+  }
+}
+
+@media (min-width: 761px) and (max-width: 1024px) {
+  .banner {
+    height: auto;
+    min-height: 450px;
+  }
+}
+
+@media (max-width: 760px) {
+  .banner {
+    height: auto;
+    min-height: 330px;
+  }
+}
+
+
+/* Final CTA and content overflow fix */
+.banner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  align-items: center;
+  height: auto;
+  min-height: 450px;
+  max-height: none;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  overflow: visible;
+}
+
+.content {
+  align-self: center;
+  min-height: 0;
+  padding-bottom: 8px;
+}
+
+.cta {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-bottom: 8px;
+  z-index: 10;
+}
+
+@media (min-width: 1025px) {
+  .banner {
+    height: 450px;
+    min-height: 450px;
+  }
+}
+
+@media (min-width: 761px) and (max-width: 1024px) {
+  .banner {
+    height: auto;
+    min-height: 450px;
+  }
+}
+
+@media (max-width: 760px) {
+  .banner {
+    grid-template-columns: minmax(0, 1fr);
+    height: auto;
+    min-height: 330px;
+  }
+}
+
